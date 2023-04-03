@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="external_style.css">
+    <title>Kickunity - Your hub for all things football</title>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="logo">
+                <img src="./logo_white.png" alt="">
+        </div>
+        <ul>
+            <li onclick="toggleActive(this);" class="navList active"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/index.html">Home</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/comments.html">Comments</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="https://w1939035.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="#">Quiz</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="https://w1947683.users.ecs.westminster.ac.uk/webdev/sitemap.html">Site Map</a></li>
+            <li onclick="toggleActive(this);" class="navList"><a href="#">About us</a></li>
+        </ul>
+    </nav>
+
+
+    <script>
+        
+        function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBar){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive()
+            e.classList.toggle("active")
+        }
+
+    </script>
+
+
+</body>
+</html>

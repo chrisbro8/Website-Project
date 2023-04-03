@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="external_style.css">
+    <title>Kickunity - Your hub for all things football</title>
+
+
+
+    <script>
+        
+        function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBar){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive()
+            e.classList.toggle("active")
+        }
+
+    </script>
+  <link rel="stylesheet" href="navigation.css">
+  <style>
+    /* i Decided to experiment with transfrom+transition 2D
+    moved the img to y axis 50deg and rotate on the left axis */
+
+
+  body{
+    background-color:rgba(0, 0, 0, 0.727) ;
+    
+  }
+    .pageedit{
+      position:fixed;
+      bottom:2%;
+      right:2%;
+    }
+   
+     
+
+
+     #pageinner{
+      cursor:pointer;
+      text-decoration:overline;
+      font:larger;
+      font-style:italic;
+      height:30px;
+      border-style:solid;   
+      color:	black;
+      background-color: greenyellow;
+
+    }
+
+
+
+
+  
+    #student1{
+      position: absolute;
+      top: 15%;
+      left:38%;
+      width:24%;
+  
+    
+      transition: box-shadow 2s;
+      border-radius:15px;
+      z-index: -1;
+  
+      
+    }
+    #student1:hover{
+      box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    
+  } 
+
+
+   
+.stuff1{
+  width:5%;
+  margin:10px;
+  border-radius: 20px;
+   transition: box-shadow 1s;
+  
+}
+.stuff1:hover{
+   box-shadow:     
+    0px 0px 1px 2px white,
+    0px 0px 3px 4px magenta; 
+  }
+
+
+#nav1{
+  position:absolute;
+  top:85%;
+  left: 43%;
+}
+/*Student 2*/
+
+
+    #student2{
+      position: absolute;
+      top: 105%;
+      left:38%;
+      width:24%;
+  
+    
+      transition: box-shadow 2s;
+      border-radius:15px;
+      z-index: -1;
+  
+      
+    }
+    #student2:hover{
+      box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    
+  } 
+
+
+   
+.stuff2{
+  width:5%;
+  margin:10px;
+  border-radius: 20px;
+   transition: box-shadow 1s;
+  
+}
+.stuff2:hover{
+   box-shadow:     
+    0px 0px 1px 2px white,
+    0px 0px 3px 4px magenta; 
+  }
+
+
+#nav2{
+  position:absolute;
+  top: 160%;
+  left: 43%;
+}
+/*Student 3*/
+
+    #student3{
+      position: absolute;
+      top: 195%;
+      left:38%;
+      width:24%;
+  
+    
+      transition: box-shadow 2s;
+      border-radius:15px;
+      z-index: -1;
+  
+      
+    }
+    #student3:hover{
+      box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    
+  } 
+
+
+   
+.stuff3{
+  width:5%;
+  margin:10px;
+  border-radius: 20px;
+   transition: box-shadow 1s;
+  
+}
+.stuff3:hover{
+   box-shadow:     
+    0px 0px 1px 2px white,
+    0px 0px 3px 4px magenta; 
+  }
+
+
+#nav3{
+  position:absolute;
+  top:245%;
+  left: 43%;
+}
+/*Student 4*/
+
+    #student4{
+      position: absolute;
+      top: 265%;
+      left:38%;
+      width:24%;
+  
+    
+      transition: box-shadow 2s;
+      border-radius:15px;
+      z-index: -1;
+  
+      
+    }
+    #student4:hover{
+      box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    
+  } 
+
+
+   
+.stuff4{
+  width:5%;
+  margin:10px;
+  border-radius: 20px;
+   transition: box-shadow 1s;
+  
+}
+.stuff4:hover{
+   box-shadow:     
+    0px 0px 1px 2px white,
+    0px 0px 3px 4px magenta; 
+  }
+
+
+#nav4{
+  position:absolute;
+  top:317%;
+  left: 43%;
+}
+#info1{
+  margin-top: 40px;
+  color: white;
+  width:280px;
+  margin-left:-50px;
+  padding-left: 90px;
+
+}
+#info1{
+     box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    display: none;
+    margin-left: 80px;
+    transition: display 2s,box-shadow 2s;
+
+}
+#info2{
+  
+  margin-top: 135px;
+  color: white;
+  
+   width:280px;
+
+     box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    margin-left: 80px;
+
+    display: none;
+    transition: display 2s,box-shadow 2s;
+}
+#info3{
+  margin-top:100px;
+  color: white;
+  
+   width:280px;
+
+
+    box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    margin-left: 80px;
+
+    display: none;
+    transition: display 2s,box-shadow 2s;
+    
+} 
+#info4{
+  color: white;
+
+   width:280px;
+
+
+     box-shadow:   
+    0px 0px 3px 3px cyan, 
+    3px 3px 8px 8px greenyellow ;
+    margin-top: -20px;
+    margin-left: 80px;
+    display: none;
+    transition: display 2s,box-shadow 2s;
+    
+}
+  </style>
+  <script>
+   
+
+
+
+
+    function removeActive(){
+        let navBar = document.getElementsByClassName("active")
+        for(let list of navBar){
+            list.classList.remove("active")
+        }
+    }
+    function toggleActive(e){
+        removeActive()
+        console.log("hello")
+        e.classList.toggle("active")
+    }
+    function getinfo(event){
+      event.style.display="inline";
+    }
+    function removeinfo(event){
+      event.style.display="none";
+    }
+
+
+//my own path
+    //get the classsname when maouseover and then show student information
+
+  </script>
+
+</head>
+<body>
+  <nav class="navigation">
+    <div class="logo">
+            <img src="./logo_white.png" alt="">
+    </div>
+    <ul>
+        <li onclick="toggleActive(this);" class="navList active"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/index.html">Home</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/comments.html">Comments</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1939035.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Start.html">Quiz</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1947683.users.ecs.westminster.ac.uk/webdev/sitemap.html">Site Map</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Studentdetails.html">About us</a></li>
+    </ul>
+</nav>
+  <img onmousemove="getinfo(info1)" onmouseout="removeinfo(info1)"  id="student1" src="Ernesto.jpg" alt="studentone">
+  <nav id="nav1">
+    <a  href="https://whatsapp.com"><img   class="stuff1" src="whatsapp.png" alt=""></a>
+       <a  href="https://discord.com"><img  class="stuff1" src="discord-logo-transparent.png" alt=""></a>
+    <a href="https://github.com"><img class="stuff1" src="github.png" alt=""></a>
+    <p id="info1">Ernesto Role 1</p>
+
+  </nav>
+  <!--student2-->
+
+  <img onmousemove="getinfo(info2)" onmouseout="removeinfo(info2)" id="student2" src="tibebe.jpg" alt="studentone">
+  <nav id="nav2">
+    <a  href="https://whatsapp.com"><img   class="stuff2" src="whatsapp.png" alt=""></a>
+       <a  href="https://discord.com"><img  class="stuff2" src="discord-logo-transparent.png" alt=""></a>
+    <a href="https://github.com/tib-source"><img class="stuff2" src="github.png" alt=""></a>
+    <p id="info2">Tibebe Student 2</p>
+
+  </nav>
+  <!--student3-->
+
+  <img  onmousemove="getinfo(info3)" onmouseout="removeinfo(info3)" id="student3" src="brownwell.jpg" alt="studentone">
+  <nav id="nav3">
+    <a  href="https://whatsapp.com"><img   class="stuff3" src="whatsapp.png" alt=""></a>
+       <a  href="https://discord.com"><img  class="stuff3" src="discord-logo-transparent.png" alt=""></a>
+    <a href="https://github.com/chrisbro8"><img class="stuff3" src="github.png" alt=""></a>
+    <p id="info3">Brownwell Student 3</p>
+
+  </nav>
+  <!--student4-->
+
+  <img onmousemove="getinfo(info4)" onmouseout="removeinfo(info4)"  id="student4"  src="Edwin.jpg" alt="studentone" >
+  <nav id="nav4">
+    <a href="https://whatsapp.com"><img   class="stuff4" src="whatsapp.png" alt=" "></a>
+       <a href="https://discord.com"><img  class="stuff4" src="discord-logo-transparent.png" alt=" "></a>
+    <a href="https://github.com"><img class="stuff4" src="github.png" alt=" "></a>
+    <p id="info4">Edwin Student 4</p>
+
+  </nav>
+  
+  <div class="pageedit"><a id="pageinner" href="Student4Pageinfo2.html"  target="_blank">Editor Info</a> </div>
+  
+
+
+
+  
+</body>
+</html>

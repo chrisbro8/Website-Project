@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="external_style.css">
+      <title>PageInfo</title>
+      <style>
+        body{
+            overflow: hidden;
+          
+        
+        }
+        img{
+          width:30%;
+      
+        }
+        img:active{
+          
+          width: 55%;
+        }
+        .styling{
+          position:absolute;
+          left:26%;
+          
+
+          
+        }
+        h2{
+          text-align: center;
+        }
+        .arrow{
+          width:1%;
+          position:fixed;
+          bottom:2.7%;
+          right:2%;
+          
+  
+          
+
+        }
+        .goback{
+           width:7%;
+          position:fixed;
+          bottom:2%;
+          right:1%;
+          border: solid;
+          text-decoration: none;
+          color: black;
+     
+          
+
+
+        }
+        .goback:hover{
+          opacity:0.7;
+        }
+        .goback:active{
+          opacity:0.4%;
+        }
+          ul,li{
+            position: relative;
+            left:10%
+        
+       }
+
+      </style>
+  
+
+      <script>
+
+        function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBasr){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive()
+            console.log("hello")
+            e.classList.toggle("active")
+        }
+     
+
+
+
+    </script>
+
+</head>
+<body>
+  <nav class="navigation">
+    <div class="logo">
+            <img src="./logo_white.png" alt="">
+    </div>
+    <ul>
+        <li onclick="toggleActive(this);" class="navList active"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/index.html">Home</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/comments.html">Comments</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1939035.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Start.html">Quiz</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1947683.users.ecs.westminster.ac.uk/webdev/sitemap.html">Site Map</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Studentdetails.html">About us</a></li>
+    </ul>
+</nav>
+
+
+
+    <!--My Wo=rk Starts Below-->
+  <h2> Quiz Game </h2>
+  <div class="styling">
+    <!--You can click on the image to enlarge-->
+    <span>Click on the  Start Button to Start playing</span>
+    <p>It is made of two parts the question page and  the score summary as shown below</p>
+    <p>You Immediately Start Playing with a One Minute Timer</p>
+    <p>The games are Shufffled So dont think you would get the Same Question in their postion Twice</p>
+    <img src="questionhome.jpg" alt="questionpage">
+    <p>The picture above depicts how the Question page looks like and you would ask ten questions </p>
+
+
+    <img src="scoresummary.jpg" alt="scoresummary">
+    <p>The image above is  the Score summary after the quiz which has Ended/p>
+    <ul><li>The Quiz can end in two instances:</li>
+      <li> You Finished the Quiz Before you are done</li>
+      <li>The Clock Runs out before you Finshed</li>
+    </ul>
+    <p>Finally you get a grade that appears Either red or green signifying good or bad based on your peformance overall.</p>
+</div>
+<a class="goback" href="Start.html">Go Back<img  class="arrow" src="arrow.png" alt="arrow"></a>
+
+
+  
+</body>
+</html>

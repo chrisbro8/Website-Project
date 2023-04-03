@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="navigation.css">
+  <script>
+    function startgame(){
+      location.href="QuizStudentDetails.html";
+    }
+
+  </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  
+  <style>
+ 
+    body{
+      background-color: #dec3c3 ;
+      overflow: hidden;
+      
+    }
+    span{
+      font-weight:700;
+      font-size: larger;
+    }
+    .buttoncustom1{
+      border-radius:15px;
+      background-color: rgb(172, 142, 142);
+      width: 80px;
+      height:40px;
+      
+
+      
+      
+      
+      
+
+    }
+    .buttoncustom1:hover{
+      box-shadow: 2px 2px;  
+      opacity:0.6;
+      cursor: pointer;
+      transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      background-color:green;
+      transition: background-color 0.8s ease;
+    }
+    .buttoncustom1:active{
+      opacity:0.2 ;
+
+     
+    
+    }
+    .start{
+      position: fixed;
+      top: 50%;
+      left:50%;
+    
+
+    }
+    .pageedit{
+      position:fixed;
+      bottom:2%;
+      right:2%;
+    }
+   
+     
+
+
+     #pageinner{
+      cursor:pointer;
+      text-decoration:overline;
+      font:larger;
+      font-style:italic;
+      height:30px;
+      border-style:solid;   
+      color:	black;
+      background-color: greenyellow;
+
+    }
+    
+     #pageinner:hover{
+      background-color: greenyellow;
+      opacity:0.7;
+      
+
+      
+    }
+
+   
+    
+   
+  </style>
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Kickunity - Your hub for all things football</title>
+</head>
+<body>
+  <nav class="navigation">
+    <div class="logo">
+            <img src="./logo_white.png" alt="">
+    </div>
+    <ul>
+        <li onclick="toggleActive(this);" class="navList active"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/index.html">Home</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/comments.html">Comments</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1939035.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Start.html">Quiz</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1947683.users.ecs.westminster.ac.uk/webdev/sitemap.html">Site Map</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Studentdetails.html">About us</a></li>
+    </ul>
+</nav>
+    <script>
+
+        function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBar){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive()
+            console.log("hello")
+            e.classList.toggle("active")
+        }
+
+        //my function to another page to the pageeditorpage
+
+
+
+
+    </script>
+
+  <div class="start">
+    <button  class="buttoncustom1" onclick="startgame()"><span>Start</span></button>
+  </div>
+  <div class="pageedit"><a id="pageinner" href="Student4Pageinfo.html"  target="_blank">Page Editor</a> </div>
+
+  
+</body>
+
+</html>

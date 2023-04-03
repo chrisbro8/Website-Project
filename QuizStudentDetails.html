@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  
+
+ <script>
+
+      
+  
+    //incase tryagain was clicked
+    function restartgame(){
+      location.href="QuizStudentDetails.html";
+    } 
+
+    function startgame(){
+      location.href="QuizStudentDetails.html";
+    }
+
+  </script>
+ 
+
+  
+  <style>
+ 
+    body{
+      background-color: #dec3c3 ;
+      overflow: hidden;
+      
+    }
+    span{
+      font-weight:700;
+      font-size: larger;
+    }
+    .buttoncustom1{
+      border-radius:15px;
+      background-color: rgb(172, 142, 142);
+      width: 80px;
+      height:40px;
+      
+
+      
+      
+      
+      
+
+    }
+    .buttoncustom1:hover{
+      box-shadow: 2px 2px;  
+      opacity:0.6;
+      cursor: pointer;
+      transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      background-color:green;
+      transition: background-color 0.8s ease;
+    }
+    .buttoncustom1:active{
+      opacity:0.2 ;
+
+     
+    
+    }
+    .start{
+      position: fixed;
+      top: 50%;
+      left:50%;
+    
+
+    }
+    .pageedit{
+      position:fixed;
+      bottom:2%;
+      right:2%;
+    }
+   
+     
+
+
+     #pageinner{
+      cursor:pointer;
+      text-decoration:overline;
+      font:larger;
+      font-style:italic;
+      height:30px;
+      border-style:solid;   
+      color:	black;
+      background-color: greenyellow;
+
+    }
+    
+     #pageinner:hover{
+      background-color: greenyellow;
+      opacity:0.7;
+      
+
+      
+    }
+    #counter,#timeinner{
+     font-size:medium;
+      font-weight:lighter;
+    }
+
+
+   
+    
+   
+  </style>
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Kickunity - Your hub for all things football</title>
+</head>
+<body>
+
+    <script>
+
+        function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBar){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive()
+            console.log("hello")
+            e.classList.toggle("active")
+        }
+        //my function to another page to the pageeditorpage
+
+
+
+
+    
+
+
+
+
+   var questioning=[
+      "Who were the joint top scorers in the 2021/22 Premier League season?",
+      "Jurgen Klopp began his managerial career at which German club?",
+      "Which female tennis player has won the highest number of Grand Slams?",
+      "Tiger Woods won his first major in over a decade at which 2019 tournament?",
+      "Which footballer has scored the most goals in World Cup history?",
+      "In which year did Roger Federer win his first Wimbledon title?",
+      "Who is the only player to have scored in the Premier League, Championship, League 1, League 2, Conference, FA Cup, League Cup, Football League Trophy, FA Trophy, Champions League, Europa League, Scottish Premier League, Scottish Cup, and Scottish League Cup?",
+      "Max Verstappen won the Formula One World Driver’s title in 2022, but who came second?",
+      "Who is the highest run-scorer of all time in International cricket?",
+  ];
+  var answers=[
+    "Mohammed Salah",
+    "Mainz 05",
+    "Margaret Court",
+    "The Masters",
+    "Miroslav Klose",
+    "2003",
+    "Gary Hooper",
+    "Charles Leclerc",
+    "Sachin Tendulkar",
+  ];
+  var fakeanswers=[
+    ["Mohammed Salah","Son Heug Min","Cristiano Ronaldo","Harry Kane"],
+    ["Dortmund","Liverpool","Mainz 05","Chelsa"],
+    ["Helen Wills","Serena Willams","Margaret Court","Steffi Graf"],
+    ["U.S Opens","PGA","Open Championship","The Masters"],
+    ["Miroslav Klose","Pele","Maradona","Messi"],
+    ["2003","2002","2001","2004"],
+    ["Ibrahimovic","Pele","Neymar","Gary Hooper"],
+    ["Lewis Hamilton","Charles Leclerc","Alain Prost","Sebestian Vettel"],
+    ["Sachin Tencdulkar","KC Sangakkara ","RT Ponting ","MJ Clarke"],
+  ];
+
+  var correctans=0;
+  var rand;
+  var totalcorrectans=0;
+  var wronganswer=10;
+  var grading;
+  var seconds;//to track the time spent
+  var trackclick=false;
+   
+  //to check for first value and if he selected something
+
+
+
+ 
+
+    
+ 
+  //generate random questions a random question
+
+  
+
+  //45 sec countdown timer
+  <!-- Display the countdown timer in an element -->
+
+// Set the date we're counting down to
+var timeelapsed;
+
+function startTimer() {
+  seconds = 60;
+  let timer = setInterval(function() {
+    seconds--;
+    console.log(seconds);
+    document.getElementById("timeinner").innerHTML=seconds;
+    
+
+    if (seconds === 0) {
+      clearInterval(timer);
+        var timeelapsed=seconds;
+          grading=(totalcorrectans*100)/10;
+          //round the number to 2 decimal place 
+          let roundedgrading = grading.toFixed(2);
+          document.getElementById("gradestyle").innerHTML=roundedgrading+"%";
+          stylescore=document.getElementById("gradestyle");
+
+          if (totalcorrectans>=5){
+            stylescore.style.color="green";
+          
+          }
+          else{
+            stylescore.style.color="red";
+          }
+          document.getElementById("timespent").innerHTML="EXPIRED";
+          document.getElementById("totalscore").innerHTML=totalcorrectans;
+          document.getElementById("wrong").innerHTML=wronganswer;
+          var showreport=document.getElementById("reportform");
+          var showreport2=document.getElementById("maindiv");
+          showreport2.style.filter="blur(3px)";
+          showreport.style.display="inline";
+      
+    }
+  }, 1000);
+}
+
+startTimer();//start the time
+
+
+
+//get the text content clicked
+
+
+
+
+  
+    
+  //just after onciclk is executed
+
+
+
+
+    
+
+  
+
+   function answerschange(rand){
+      document.getElementById("Question1").innerHTML=fakeanswers[rand][0];
+      document.getElementById("Question2").innerHTML=fakeanswers[rand][1];
+      document.getElementById("Question3").innerHTML=fakeanswers[rand][2];
+      document.getElementById("Question4").innerHTML=fakeanswers[rand][3];
+      //fakeanswers.splice([rand],1);
+       
+      
+      
+ 
+      
+
+  }
+  
+
+
+  
+   
+  
+
+
+   
+
+  
+    
+      
+
+
+  
+  function nextquestion(event){
+    let sizeof=(questioning.length);
+    let counter=11;
+    
+   
+
+    
+   
+
+        let fromnextquestions=document.getElementById("fromnextquestion").id;
+        //this is for tracking incase the time has expired
+    
+          if(event==fromnextquestions && trackclick==true){
+           
+          if (correctans==1){
+            //  this is to add correct ans and avoid repition
+            totalcorrectans=totalcorrectans+correctans;
+            wronganswer=wronganswer-correctans;//to get wrong answers
+
+            correctans=0;//to prevent repitition
+            console.log(totalcorrectans+"correct");
+            console.log("wrongasnwers"+wronganswer);
+          }
+      
+          
+             
+          
+          
+        //keep getting a new  counter and reduced length
+        //-1 Beacuse the index would be out of range
+        //used the reducing size to track counter
+        console.log("sizeof"+sizeof)
+
+        if(sizeof>0 ){
+          counter=(counter-sizeof);
+        
+          
+          
+                
+          
+          
+          //remove the called element 
+          questioning.splice(rand,1);
+          answers.splice(rand,1);
+          fakeanswers.splice([rand],1);
+      
+        
+        
+         
+          document.getElementById("counter").innerHTML=counter;
+          rand=Math.floor(Math.random()*sizeof);// this is down  here to run the first intialztion
+          answerschange(rand);
+          document.getElementById("mainQuestion").innerHTML=questioning[rand];
+          
+
+
+      }else if (sizeof<1){
+          var timeelapsed=seconds;
+          grading=(totalcorrectans*100)/10;
+          //round the number to 2 decimal place 
+          let roundedgrading = grading.toFixed(2);
+          document.getElementById("gradestyle").innerHTML=roundedgrading+"%";
+          stylescore=document.getElementById("gradestyle");
+
+          if (totalcorrectans>=5){
+            stylescore.style.color="green";
+          
+          }
+          else{
+            stylescore.style.color="red";
+          }
+          document.getElementById("timespent").innerHTML=(60-seconds)+"sec";
+          document.getElementById("totalscore").innerHTML=totalcorrectans;
+          document.getElementById("wrong").innerHTML=wronganswer;
+          var showreport=document.getElementById("reportform");
+          var showreport2=document.getElementById("maindiv");
+          showreport2.style.filter="blur(3px)";
+          showreport.style.display="inline";
+          showreport.style.backdropFilter="blur(10px)";
+      }
+    }else{
+      trackclick=true;
+      if(trackclick==true){
+          
+          let idname=document.getElementById(event);
+        
+          console.log(idname.innerText+"inertext");
+          console.log(answers[rand]+"from answer rand");//after second intializTION
+          console.log(answers);
+
+          if(idname.innerText=="World Wrestling Entertainment" || idname.innerText == answers[rand]){
+            correctans=1;
+            //console.log("is the is correct"+correctans)
+          }
+          else{ 
+            correctans=0;
+           
+            console.log("wrong answers");
+        
+          }
+
+      }else{
+        alert("Please Enter An Option")
+
+      }
+
+     }
+
+        
+}
+       
+        
+        function removeActive(){
+            let navBar = document.getElementsByClassName("active")
+            for(let list of navBar){
+                list.classList.remove("active")
+            }
+        }
+        function toggleActive(e){
+            removeActive();
+            e.classList.toggle("active")
+        }
+
+
+
+
+    </script>
+        
+
+   
+      
+     
+  <link rel="stylesheet" href="navigation.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="external_style.css">
+    <title>Kickunity - Your hub for all things football</title>
+  <!--The body is the navigation bar  made by student  -->
+   
+
+
+  <style>
+    body{
+    background-color: rgb(172, 142, 142);
+      
+
+      
+    }
+    #maindiv{
+      background-color: #dec3c3 ;
+      margin-right:auto;
+      margin-left:auto;
+      width:500px;
+      margin-top: 150px;
+      border-radius:8px;
+      height: 300px;
+      position: relative;
+       /*filter: blur(3px);to be used after the last 
+      question or time out*/
+      
+
+      
+    }
+    #reportform{
+      position: absolute;
+      top: 30%;
+      left: 37%;
+      width: 300px;
+      height:430px;
+      border-style: solid;
+      border-radius: 13px;display: none;
+      
+
+    
+    
+      
+
+     
+    }
+    .report_form{
+      display:flex;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: 700;
+      width:300px;
+      line-height:65px;
+      
+    }
+
+    .buttonCustom{
+      margin-top:2px;
+      margin-left:200px;
+      font-size: smaller;
+      border-color: rgb(25, 22, 22);
+      background-color: rgb(65, 65, 108);
+      font-weight: 300;
+      border-style:none;
+      border-radius:12px;
+      width:120px;
+    }
+    .buttonCustom:hover{
+      height:23px;
+      background-color:  rgb(102, 90, 90);
+      transition:background-color 2s,height 0.5s;
+      cursor: pointer;
+      
+    }
+    .buttonCustom:active{
+      height:23px;
+      background-color:  rgb(7, 102, 71);
+      opacity:0.2;
+
+
+    }
+    #time{
+      float: right;
+      margin-right:100px;
+      
+      font-weight:lighter;
+      font-size:medium;
+    }
+    #questionloop{
+      margin-left:100px;
+      font-size: medium;
+      font-weight:lighter;
+    }
+    #mainQuestion{
+      margin: auto;
+      width:375px;
+      border: 1px;
+      border-color: rgb(25, 22, 22);
+      border-style: outset;
+      border-radius:8px;
+      height:125px;
+      margin-top:12px;
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      padding-left:5px;
+
+    }
+    body:hover{
+      cursor:grabbing;
+    }
+
+    .GeneralAnswers{
+    
+      width:370px;
+      margin-right: auto;
+      margin-left:auto;
+      height:88px;
+      margin-top:14px;
+    }
+    .GeneralAnswersinner{
+      
+      height:47px;
+    }
+    #Question1,#Question3{
+      justify-content:center;
+      justify-items:center;
+      border-style: solid;
+      border-radius:8px;
+      width: 180px;
+      height:30px;
+      float: left;
+      text-align:center;
+      padding-top:6px;
+      background-color:  rgb(90, 90, 102);
+      font-size:12px;
+ 
+      
+    }
+    #Question2,#Question4{
+      justify-content:center;
+      justify-items:center;
+      border-style: solid;
+      border-radius:8px;
+      width: 180px;
+      height:30px;
+      float: right;
+      text-align:center;
+      padding-top:6px;
+      background-color:  rgb(90, 90, 102);
+      font-size:12px;
+  
+    }
+    #Question1:hover,#Question2:hover,#Question3:hover,#Question4:hover{
+      height:27px;
+      background-color:  rgb(254, 10, 10);
+      transition:background-color 2s,height 0.5s;
+      box-shadow: 2px 2px;
+      cursor: pointer;
+      
+    }
+
+    #Question1:focus,#Question2:focus,#Question3:focus,#Question4:focus {
+      background-color: rgb(26, 27, 126);
+      color:green;
+    }
+    #tryagain{
+      border-radius: 7.5px;
+      background-color: #dec3c3;
+      width:80px;
+    }
+        #tryagain:hover{
+      border-radius: 10px;
+      background-color: green;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+        #tryagain:active{
+      border-radius: 10px;
+      opacity:0.6;
+    }
+
+  </style>
+</head>
+<body>
+ 
+  <!--The  navigation bar below-->
+  <nav class="navigation">
+    <div class="logo">
+            <img src="./logo_white.png" alt="">
+    </div>
+    <ul>
+        <li onclick="toggleActive(this);" class="navList active"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/index.html">Home</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1942902.users.ecs.westminster.ac.uk/webdev/comments.html">Comments</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1939035.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Start.html">Quiz</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1947683.users.ecs.westminster.ac.uk/webdev/sitemap.html">Site Map</a></li>
+        <li onclick="toggleActive(this);" class="navList"><a href="https://w1908160.users.ecs.westminster.ac.uk/CourseWork/Studentdetails.html">About us</a></li>
+    </ul>
+</nav>
+
+
+
+    
+
+
+
+
+  
+  <div id="maindiv">
+
+    <div style="padding-top:14px;">
+      <span id="questionloop">Questions:<span id="counter">1</span><span style="font-size: medium; font-weight: lighter;">/10</span></span>
+      <span id="time">Time:<span id="timeinner"></span></span>
+   
+    </div>
+         
+    <div id="mainQuestion" ><!--Get this and ask the array questions-->What does WWE stand for?</div>
+
+    <div class="GeneralAnswers">
+      <div class="GeneralAnswersinner" >
+        <button id="Question1" onclick="nextquestion(this.id)">World Wide Entertainment</button>
+        <button  id="Question2" onclick="nextquestion(this.id)" >World Wrestling Entertainment</button>
+      </div> 
+      <div class="GeneralAnswersinner">
+          <button  id="Question3" onclick="nextquestion(this.id)">World Winning Enjoy</button>
+          <button  id="Question4" onclick="nextquestion(this.id)">World Wrestling Entertain</button>
+        
+        
+      </div>
+
+      
+      
+   </div>
+   <button id="fromnextquestion" onclick="nextquestion(this.id)" class="buttonCustom">Next Question</button>
+
+
+
+</div>
+
+
+<!--final report of the question and answers-->
+<div id="reportform">
+  <span class="report_form">Congratulation On Quiz</span>
+  <span class="report_form">Questions:10</span>
+  <span class="report_form">Wrong Answers:<span id="wrong"></span></span>
+  <span class="report_form">Score:<span id="totalscore"></span>/10</span>
+  <span class="report_form" >Grade: <span id="gradestyle"></span></span>
+  <span class="report_form">Time Elapsed:<span id="timespent"></span></span>
+  <span class="report_form" ><button  id="tryagain" onclick="restartgame()">Try Again</button></span>
+
+
+</div>
+  
+</body>  
+
+
+</html>
